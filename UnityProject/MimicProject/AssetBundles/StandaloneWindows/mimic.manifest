@@ -1,0 +1,67 @@
+ManifestFileVersion: 0
+CRC: 1836028728
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 743d1e9095cae95cf08762e4792f5fa1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 16b928994fefef3e3fa6cbdaf1bbeda7
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2a25df0355bf6b942b7d4494e1d6c027, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aaabc320440a02340b0239f0cf1745a2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 24f98ceb39626e542bce4568de94b61d, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/Mimic/Textures/texMimicEmission.png
+- Assets/Mimic/Animations/MimicSpawn.anim
+- Assets/Mimic/Animations/MimicIdle.anim
+- Assets/Mimic/Animations/MimicIdleIn.anim
+- Assets/Mimic/Mesh/MimicMesh.fbx
+- Assets/Mimic/Animations/MimicAscend.anim
+- Assets/Mimic/Textures/texMimic.png
+- Assets/Mimic/Animations/MimicWalkF.anim
+- Assets/Mimic/Animations/MimicLeapUp.anim
+- Assets/Mimic/Animations/MimicLeapForward.anim
+- Assets/Mimic/Animations/MimicLeapDown.anim
+- Assets/Mimic/Animations/MimicDeath.anim
+- Assets/Mimic/Animations/MimicJump.anim
+- Assets/Mimic/mdlMimic.prefab
+- Assets/Mimic/Animations/MimicLeapExit.anim
+- Assets/Mimic/Animations/MimicLeapStart.anim
+- Assets/Mimic/Animations/animMimic.controller
+- Assets/Mimic/Animations/animEnforcer.controller
+- Assets/Mimic/Animations/MimicDescend.anim
+- Assets/Mimic/Materials/matMimic.mat
+Dependencies: []

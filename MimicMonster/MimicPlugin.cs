@@ -80,6 +80,9 @@ namespace EnforcerPlugin
             //destroy mdlMushroom
             Destroy(modelBase.transform.GetChild(0).gameObject);
 
+            //resize the model
+            modelBase.transform.localScale *= 0.5f;
+
             //replace it with our own model
             Transform transform = model.transform;
             transform.parent = modelBase.transform;
@@ -166,6 +169,31 @@ namespace EnforcerPlugin
             characterModel.autoPopulateLightInfos = true;
             characterModel.invisibilityCount = 0;
             characterModel.temporaryOverlays = new List<TemporaryOverlay>();
+
+            //gotta replace the material with a new one using hotpoo shaders:tm: for maximum quality
+
+            CharacterModel.RendererInfo[] rendererInfos = characterModel.baseRendererInfos;
+            CharacterModel.RendererInfo[] array = new CharacterModel.RendererInfo[rendererInfos.Length];
+            rendererInfos.CopyTo(array, 0);
+
+            //clone commando material and replace with our own textures
+            Material material = array[0].defaultMaterial;
+
+            if (material)
+            {
+                material = UnityEngine.Object.Instantiate<Material>(Resources.Load<GameObject>("Prefabs/CharacterBodies/CommandoBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[0].defaultMaterial);
+                material.SetColor("_Color", Color.white);
+                material.SetTexture("_MainTex", Assets.MainAssetBundle.LoadAsset<Material>("matMimic").GetTexture("_MainTex"));
+                material.SetColor("_EmColor", Color.white);
+                material.SetFloat("_EmPower", 1);
+                material.SetTexture("_EmTex", Assets.MainAssetBundle.LoadAsset<Material>("matMimic").GetTexture("_EmissionMap"));
+                material.SetFloat("_NormalStrength", 0);
+
+                array[0].defaultMaterial = material;
+            }
+
+            //now replace the material on our model
+            characterModel.baseRendererInfos = array;
 
             //mainrenderer is needed for skin stuff
             characterModel.SetFieldValue("mainSkinnedMeshRenderer", characterModel.baseRendererInfos[0].renderer.gameObject.GetComponent<SkinnedMeshRenderer>());
